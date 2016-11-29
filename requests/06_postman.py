@@ -1,5 +1,5 @@
 ''' Postman > Basic Auth
-	(Ã·ºÎµÈ ÀÌ¹ÌÁö ÆÄÀÏ ÂüÁ¶ : 00_Postman_BasicAuth.JPG)
+	(첨부된 이미지 파일 참조 : 00_Postman_BasicAuth.JPG)
 '''
 import requests
 
