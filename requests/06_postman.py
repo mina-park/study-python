@@ -1,5 +1,5 @@
 ''' Postman > Basic Auth
-	(梅何等 捞固瘤 颇老 曼炼 : 00_Postman_BasicAuth.JPG)
+	(脙路潞脦碌脠 脌脤鹿脤脕枚 脝脛脌脧 脗眉脕露 : 00_Postman_BasicAuth.JPG)
 '''
 import requests
 
