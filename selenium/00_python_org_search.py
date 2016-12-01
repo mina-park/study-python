@@ -6,6 +6,9 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys	# RETURN, F1, ALT 등과 같은 키보드의 특수키 동작 제공
 
 driver = webdriver.Firefox()
+#driver = webdriver.Chrome()
+#driver = webdriver.Ie()
+
 driver.get("http://www.python.org")	# 웹드라이버는 페이지가 모두 로드될때까지 기다림.(예외: AJAX)
 assert "Python" in driver.title		# title에 "Python" 단어가 있음을 확인. 없으면 AssertionError 발생
 elem = driver.find_element_by_name("q") # name="q"인 요소 찾기
