@@ -2,20 +2,31 @@
 	참고 : http://yumere.tistory.com/75
 	http://selenium-python.readthedocs.io/api.html
 '''
-
+import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-#import time
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 #driver = webdriver.Firefox()
 driver = webdriver.Chrome()
+#driver = webdriver.Ie()
 
 #driver.maximize_window()
 driver.set_window_size(1000, 800)
 
+driver.get("http://www.naver.com")
+
+# 네이버 오른쪽 중앙 "투데이" 항목이 뜰 때까지 대기
+elem = WebDriverWait(driver, 10).until(
+		EC.presence_of_element_located((By.ID, 'ws_tsq'))
+		)
+
+assert "NAVER" in driver.title
+
 
 # 네이버 로그인 시도
-driver.get("http://www.naver.com")
 elem = driver.find_element_by_name("id")
 elem.clear()
 elem.send_keys("user_id")
@@ -24,21 +35,25 @@ elem.clear()
 elem.send_keys("user_pw")
 elem.send_keys(Keys.RETURN)
 
-#time.sleep(5)
 driver.implicitly_wait(5)
 
 # 네이버 검색
 #driver.get("http://www.naver.com")
 driver.back()
+
 elem_search = driver.find_element_by_id("query")
 elem_search.clear()
-elem_search.send_keys("최순실 게이트")
+elem_search.send_keys("촛불집회")
 #elem_search.send_keys(Keys.RETURN)
 driver.find_element_by_id("search_btn").click()
 
-#time.sleep(5)
+assert "네이버 통합검색" in driver.title
 
 driver.get_screenshot_as_file("./naver.jpg")
 
-driver.close()
+driver.find_element_by_xpath('//*[@id="sp_nws_all1"]/dl/dt/a').click()
+assert "촛불집회" in driver.title
+time.sleep(5)
+
+driver.quit()
 
