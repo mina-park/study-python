@@ -11,7 +11,6 @@ from selenium.webdriver.support import expected_conditions as EC
 
 #driver = webdriver.Firefox()
 driver = webdriver.Chrome()
-#driver = webdriver.Ie()
 
 #driver.maximize_window()
 driver.set_window_size(1000, 800)
