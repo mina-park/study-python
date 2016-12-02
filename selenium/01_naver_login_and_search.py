@@ -27,13 +27,13 @@ assert "NAVER" in driver.title
 
 
 # 네이버 로그인 시도
-elem = driver.find_element_by_name("id")
-elem.clear()
-elem.send_keys("user_id")
-elem = driver.find_element_by_name("pw")
-elem.clear()
-elem.send_keys("user_pw")
-elem.send_keys(Keys.RETURN)
+elem_login = driver.find_element_by_name("id")
+elem_login.clear()
+elem_login.send_keys("user_id")
+elem_login = driver.find_element_by_name("pw")
+elem_login.clear()
+elem_login.send_keys("user_pw")
+elem_login.send_keys(Keys.RETURN)
 
 driver.implicitly_wait(5)
 
@@ -41,8 +41,8 @@ driver.implicitly_wait(5)
 # 네이버 검색창 하단의 자동검색어 3개 클릭
 driver.get("http://www.naver.com")
 for idx in range(1, 4):
-	elem_path = '//*[@id="qu_txt"]/span[%d]/a' %idx
-	driver.find_element_by_xpath(elem_path).click()
+	elem_xpath = '//*[@id="qu_txt"]/span[%d]/a' %idx
+	driver.find_element_by_xpath(elem_xpath).click()
 	time.sleep(5)
 	driver.back()
 
