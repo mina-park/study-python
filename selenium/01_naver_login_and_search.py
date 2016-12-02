@@ -1,6 +1,6 @@
 '''
 	참고 : http://yumere.tistory.com/75
-	http://selenium-python.readthedocs.io/api.html
+	      http://selenium-python.readthedocs.io/api.html
 '''
 import time
 from selenium import webdriver
