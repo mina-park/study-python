@@ -1,6 +1,7 @@
 '''
 	참고 : http://yumere.tistory.com/75
-	      http://selenium-python.readthedocs.io/api.html
+			 http://selenium-python.readthedocs.io/api.html
+			 http://selenium-python.readthedocs.io/waits.html
 '''
 import time
 from selenium import webdriver
@@ -36,10 +37,16 @@ elem.send_keys(Keys.RETURN)
 
 driver.implicitly_wait(5)
 
-# 네이버 검색
-#driver.get("http://www.naver.com")
-driver.back()
 
+# 네이버 검색창 하단의 자동검색어 3개 클릭
+driver.get("http://www.naver.com")
+for idx in range(1, 4):
+	elem_path = '//*[@id="qu_txt"]/span[%d]/a' %idx
+	driver.find_element_by_xpath(elem_path).click()
+	time.sleep(5)
+	driver.back()
+
+# 네이버에 검색어 입력하여 검색
 elem_search = driver.find_element_by_id("query")
 elem_search.clear()
 elem_search.send_keys("촛불집회")
@@ -48,8 +55,10 @@ driver.find_element_by_id("search_btn").click()
 
 assert "네이버 통합검색" in driver.title
 
+# 검색 결과 화면캡쳐
 driver.get_screenshot_as_file("./naver.jpg")
 
+# 검색 결과의 첫번째 뉴스 클릭
 driver.find_element_by_xpath('//*[@id="sp_nws_all1"]/dl/dt/a').click()
 assert "촛불집회" in driver.title
 time.sleep(5)
