@@ -7,6 +7,7 @@
 
 import urllib.request
 from bs4 import BeautifulSoup
+
 if __name__ == "__main__":
 	print("Hello World")
 	req = urllib.request.Request("http://gall.dcinside.com/board/lists/?id=kimsohye")
