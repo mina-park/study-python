@@ -9,9 +9,8 @@ import urllib.request
 from bs4 import BeautifulSoup
 if __name__ == "__main__":
 	print("Hello World")
-	req = urllib.request.Request("http://gall.dcinside.com/board/lists/?id=kimsohye");
+	req = urllib.request.Request("http://gall.dcinside.com/board/lists/?id=kimsohye")
 	data = urllib.request.urlopen(req).read()
-
 #	print(data)
 
 #	with open("./04_ioi_basic_response.html", "wb") as f:
