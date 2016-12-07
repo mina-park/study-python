@@ -13,7 +13,7 @@ if __name__ == "__main__":
 	'Accept-Language': 'en-US,en;q=0.8',
 	'Connection': 'keep-alive'}
 
-	req = urllib.request.Request("http://www.daum.net", headers = hdr);
+	req = urllib.request.Request("http://www.daum.net", headers = hdr)
 	data = urllib.request.urlopen(req).read()
 
 	print(data)
