@@ -1,4 +1,4 @@
-''' 게시판에서 이미지 있는 게시물 URL을 대경로로 만들기 - ioi 김소혜 갤러리
+''' 게시판에서 이미지 있는 게시물 URL을 절대경로로 만들기 - ioi 김소혜 갤러리
 	http://hurderella.tistory.com/108 
 	http://hurderella.tistory.com/113
 	http://hurderella.tistory.com/117
